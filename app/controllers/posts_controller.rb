@@ -12,8 +12,9 @@ class PostsController < ApplicationController
     @post.category = params.permit(:category)
     @post.content = params.permit(:content)
     @post.title = params.permit(:title)
+    binding.pry
     if @post.valid?
-      binding.pry
+
       @post.save
       redirect_to post_path(@post)
     else
