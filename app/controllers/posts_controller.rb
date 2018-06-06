@@ -13,6 +13,7 @@ class PostsController < ApplicationController
     @post.content = params.permit(:content)
     @post.title = params.permit(:title)
     if @post.valid?
+      binding.pry
       @post.save
       redirect_to post_path(@post)
     else
