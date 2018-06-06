@@ -13,7 +13,7 @@ class PostsController < ApplicationController
     @post.title = params.permit(:title)
     if @post.valid?
       @post.update(post_params)
-      redirect_to post_path(@article)
+      redirect_to post_path(@post)
     else
       render :edit
     end
