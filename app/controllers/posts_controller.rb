@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post.new(post_params)
+    @post.category = params.permit(:category)
     if @post.valid?
       @post.update(post_params)
       redirect_to post_path(@post)
