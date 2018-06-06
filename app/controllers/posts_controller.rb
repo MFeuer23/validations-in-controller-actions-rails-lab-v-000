@@ -9,7 +9,7 @@ class PostsController < ApplicationController
 
   def update
   binding.pry
-    @post.category = params.permit(:category)
+    @post.category = params.permit(:category)[:category]
     @post.content = params.permit(:content)
     @post.title = params.permit(:title)
     binding.pry
