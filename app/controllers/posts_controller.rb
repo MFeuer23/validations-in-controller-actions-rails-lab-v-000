@@ -8,13 +8,10 @@ class PostsController < ApplicationController
   end
 
   def update
-  binding.pry
     @post.category = params.permit(:category)[:category]
     @post.content = params.permit(:content)[:content]
     @post.title = params.permit(:title)[:title]
-    binding.pry
     if @post.valid?
-
       @post.save
       redirect_to post_path(@post)
     else
